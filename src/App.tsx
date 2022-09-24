@@ -1,9 +1,10 @@
 import React from 'react';
+import Header from './Header';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="text-3xl font-bold underline bg-slate-500">
-     Hello World!
+    <div className='bg-stone-100 h-screen'>
+     <Header></Header>
     </div>
   );
 }
