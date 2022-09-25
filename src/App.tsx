@@ -3,7 +3,6 @@ import Header from "./Header";
 import Image from "./Image";
 import Loader from "./Loader";
 
-
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 
