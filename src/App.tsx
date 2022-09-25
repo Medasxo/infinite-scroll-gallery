@@ -57,17 +57,3 @@ const App: React.FC = () => {
 };
 
 export default App;
-
-/*
-<InfiniteScroll
-      dataLength={images.length}
-      next={fetchData}
-      hasMore={true}
-      loader={<Loader />}>
-      <div className="m-20 ml-80 mr-80 grid grid-flow-row grid-cols-3 gap-10">
-        {images.map((image) => (
-          <Image url={image.download_url} id={image.id} />
-        ))}
-      </div>
-      </InfiniteScroll>
-*/
