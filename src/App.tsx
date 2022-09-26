@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Header from "./Header";
 import Image from "./Image";
 import Loader from "./Loader";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -57,6 +58,7 @@ const App: React.FC = () => {
           ))}
         </div>
       </InfiniteScroll>
+      <ScrollToTopButton />
     </div>
   );
 };

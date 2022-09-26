@@ -25,7 +25,7 @@ const Image: React.FC<Props> = ({ url, id, author }) => {
   return (
     <div>
       {!imageIsLoaded && (
-        <div className="bg-indigo-500 rounded-2xl object-cover w-full h-full"></div>
+        <div className="animate-pulse bg-indigo-500 rounded-2xl object-cover w-full h-full"></div>
       )}
       <div
         className={`relative rounded-2xl object-cover w-full 
@@ -45,9 +45,9 @@ const Image: React.FC<Props> = ({ url, id, author }) => {
           onClick={handleImageClick}
         />
         {imageIsClicked && (
-          <h1 className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center font-righteous text-white drop-shadow-md shadow-indigo-500">
+          <h1 className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center font-righteous text-indigo-400 text-xl">
             Author
-            <p>{author}</p>
+            <h2 className="text-stone-50 ">{author}</h2>
           </h1>
         )}
       </div>

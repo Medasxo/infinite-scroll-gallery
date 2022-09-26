@@ -17,7 +17,7 @@ const ToggleButton: React.FC = () => {
   return (
     <button
       onClick={handleToggle}
-      className="absolute bottom-7 right-7 px-6 py-1 font-righteous align-middle rounded-md bg-indigo-500 shadow-lg shadow-indigo-500/70 text-stone-50 hover:bg-indigo-700"
+      className="absolute bottom-7 right-7 px-6 py-1 font-righteous align-middle rounded-md bg-indigo-500 shadow-md shadow-indigo-500/70 text-stone-50 hover:bg-indigo-700"
     >
       Toggle
     </button>
