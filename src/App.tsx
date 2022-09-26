@@ -32,13 +32,14 @@ const App: React.FC = () => {
       axios
         .get(`${apiURL}?page=${pageNumber}&limit=30`)
         .then((res) => {
-          console.log(res.data);
           setImages([...images, ...res.data]);
           if (res.data.length === 0) {
             setHasMore(false);
           }
         })
-        .catch(() => {});
+        .catch(() => {
+          setHasMore(false);
+        });
     }, 1000);
   };
 
@@ -50,11 +51,15 @@ const App: React.FC = () => {
         next={fetchData}
         hasMore={hasMore}
         loader={<Loader />}
-        style={{ overflowY: "hidden"}}
+        style={{ overflowY: "hidden" }}
       >
-        <div className="grid grid-flow-row-dense grid-cols-3 gap-3 m-10" >
+        <div className="grid grid-flow-row-dense grid-cols-3 gap-3 m-10">
           {images.map((image) => (
-              <Image url={image.download_url} id={image.id} author={image.author} />
+            <Image
+              url={image.download_url}
+              key={image.id}
+              author={image.author}
+            />
           ))}
         </div>
       </InfiniteScroll>

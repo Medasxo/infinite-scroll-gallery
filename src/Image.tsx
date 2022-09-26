@@ -1,20 +1,20 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
 interface Props {
   url: string;
-  id: string;
   author: string;
 }
 
-const Image: React.FC<Props> = ({ url, id, author }) => {
+const Image: React.FC<Props> = ({ url, author }) => {
   const [imageIsLoaded, setImageIsLoaded] = React.useState<Boolean>(false);
   const [imageIsClicked, setImageIsClicked] = React.useState<Boolean>(false);
 
-  const handleImageLoaded = () => {
+  const handleImageLoaded = (): void => {
     setImageIsLoaded(true);
   };
 
-  const handleImageClick = () => {
+  const handleImageClick = (): void => {
     if (imageIsClicked === false) {
       setImageIsClicked(true);
     } else {
@@ -39,7 +39,6 @@ const Image: React.FC<Props> = ({ url, id, author }) => {
           imageIsLoaded ? "h-full" : "h-0"
         } align-middle active:border-indigo-500 active:border-4 shadow-md shadow-indigo-500 `}
           src={url}
-          key={id}
           alt=""
           onLoad={handleImageLoaded}
           onClick={handleImageClick}
@@ -47,7 +46,7 @@ const Image: React.FC<Props> = ({ url, id, author }) => {
         {imageIsClicked && (
           <h1 className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-center font-righteous text-indigo-400 text-xl">
             Author
-            <h2 className="text-stone-50 ">{author}</h2>
+            <div className="text-stone-50 ">{author}</div>
           </h1>
         )}
       </div>
