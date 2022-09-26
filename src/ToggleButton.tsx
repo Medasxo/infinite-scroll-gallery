@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const ToggleButton: React.FC = () => {
   const [themeColor, setThemeColor] = useState<string>("white");
 
-  function handleToggle(e: React.FormEvent<EventTarget>) {
+   const handleToggle = (e: React.FormEvent<EventTarget>) => {
     e.preventDefault();
     if (themeColor === "white") {
       document.documentElement.classList.add("dark");
