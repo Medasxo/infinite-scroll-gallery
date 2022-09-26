@@ -4,7 +4,7 @@ import Image from "./Image";
 import Loader from "./Loader";
 import ScrollToTopButton from "./ScrollToTopButton";
 
-import axios from "axios";
+import axios, {AxiosError} from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const App: React.FC = () => {
@@ -37,8 +37,8 @@ const App: React.FC = () => {
             setHasMore(false);
           }
         })
-        .catch(() => {
-          setHasMore(false);
+        .catch((err: Error | AxiosError) => {
+          console.log(err);
         });
     }, 1000);
   };
